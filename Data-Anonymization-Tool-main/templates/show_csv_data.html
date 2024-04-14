@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  </head>
+  <body>
+    <p> Total number of rows in dataset: {{len}}</p>
+    <br>
+{{ data_var|safe }}
+<br>
+<form method = "POST" enctype="multipart/form-data" action = "/ins">    
+    <p> Is your dataset parsed properly?</p>
+    <input type="radio" 
+       name="yes_no"
+       value="yes"
+       checked>
+            Yes
+</input>
+
+<input type="radio"
+       name="yes_no"
+       value="no">
+            No
+</input>
+<br>
+
+  
+    <input type = "submit" value="Submit">   
+    <br>
+</form>
+
+    </body>
+</html>

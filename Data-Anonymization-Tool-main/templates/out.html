@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>The nominal value for k is :{{nom}}</p>
+    <p>The l value should be within the range :{{lran}}</p>
+    <p>The t value should be within the range:{{tran}}</p>
+    <p>--------- Utility Metrices ---------</p>
+    <p>DM score (lower is better): </p>
+    <p> BEFORE: {{raw_dm_score}} || AFTER: {{anon_dm_score}} || {{firstb}}</p>
+    <p>CAVG score (near 1 is better): </p>
+    <p> BEFORE: {{raw_cavg_score}} || AFTER: {{anon_cavg_score}} || {{secondb}}</p>
+    <p>GenILoss: [0: No transformation, 1: Full supression] </p>
+
+
+    <p>Value: {{geniloss_score}}</p>
+    {% if val %}
+    <p></p>
+
+    {% else %}
+    <form action="/download" method="get"> <!-- or method="post" -->
+        <input type="submit" value="Download">
+    </form>
+    {% endif %}
+
+
+
+
+
+</body>
+
+</html>

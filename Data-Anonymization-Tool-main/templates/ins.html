@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Total number of rows after pre-processing:{{lenp}}</p>
+    <form method = "POST" enctype="multipart/form-data" action = "/ml"> 
+    {% for col in columns %}
+    <label for="{{ col }}">{{ col }}:</label><br>
+    <select id="{{ col }}" name="{{ col }}">
+        <option value="1">Identifier</option>
+        <option value="2">Quasi-identifier</option>
+        <option value="3">Sensitive</option>
+        <option value="4">Insensitive</option>
+    </select><br><br>
+
+    {% endfor %}
+    <p>Do you want to export the anonymized dataset</p>
+    <input type="radio" 
+    name="ad"
+    value="yes"
+    checked>
+         Yes
+</input>
+
+<input type="radio"
+    name="ad"
+    value="no">
+         No
+</input>
+    <input type = "submit" value="Submit"> 
+</form>
+</body>
+</html>
